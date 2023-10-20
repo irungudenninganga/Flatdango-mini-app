@@ -61,15 +61,22 @@ function displayCards(filmsArr){
       <p class="card-text">Run Time : ${card.runtime}</p>
       <p class="card-text">Show Time : ${card.showtime}</p>
       <p class="card-text">Capacity : ${card.capacity}</p>
-      <p class="card-text">Tickets Sold : ${card.tickets_sold}</p>
+      <p  class="card-text">Available Tickets :${card.tickets_sold}</p>
       
     </div>
-    <button class="buy-ticket">Buy Ticket</button>
+    <button id="buy" class="buy-ticket">Buy Ticket</button>
   </div>
     `
+    let buyBtn= document.querySelector('.buy-ticket')
+    console.log(buyBtn)
+    buyBtn.addEventListener("click", ()=> {
+      console.log('clicked!')
+      //fetch('http://localhost:3000/films')
 
-    let buyBtn= document.getElementsByClassName('buy-ticket')
-    //buyBtn.addEventListener("click", ()=> console.log("clicked"))
+    })
+    
   })
+
+   
   
 }
