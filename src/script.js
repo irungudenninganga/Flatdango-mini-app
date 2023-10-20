@@ -32,7 +32,7 @@ function displayDropDown(filmsArr){
       </button> <br> 
       <ul class="dropdown-menu dropdown-menu-dark">
         <li id="li" class="dropdown-item active" >Top Play</li>
-        <li class="dropdown-item" >Another action</li>
+        <li class="dropdown-item" >Premium Movies</li>
       </ul>
 </div>  <br>
     `
@@ -64,20 +64,22 @@ function displayCards(filmsArr){
       <p  class="card-text">Available Tickets :${card.capacity-card.tickets_sold}</p>
       
     </div>
-    <button id="buy" class="buy-ticket">Buy Ticket</button>
+    <button id="buy" class="card-text">Buy Ticket</button>
   </div>
     `
-    let buyBtn= document.querySelector('.buy-ticket')
-    console.log(buyBtn)
-    buyBtn.addEventListener("click", ()=> {
-      alert('hi there!')
+    document.querySelector('#buy').addEventListener("click", ()=> {
+      //alert('hi there!')
       //fetch('http://localhost:3000/films')
       (card.capacity-card.tickets_sold)-1
-
+      cards.innerHTML+=`
+      <p  class="card-text">Available Tickets :${(card.capacity-card.tickets_sold)-1}</p>
+      `
+      console.log('clicked')
+  
     })
+    
     
   })
 
-   
   
 }
