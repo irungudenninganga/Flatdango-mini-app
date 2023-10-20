@@ -1,1 +1,13 @@
-@import url("bootstrap.css");
+/* @import url("./css/bootstrap.css"); */
+body{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+}
+
+.movie-name{
+    list-style: none;
+    margin-left: 20px;
+}
