@@ -62,9 +62,14 @@ function displayCards(filmsArr){
       <p class="card-text">Show Time : ${card.showtime}</p>
       <p class="card-text">Capacity : ${card.capacity}</p>
       <p class="card-text">Tickets Sold : ${card.tickets_sold}</p>
-      <button class="buy-ticket">Buy Ticket</button>
+      
     </div>
+    <button class="buy-ticket">Buy Ticket</button>
   </div>
     `
+
+    let buyBtn= document.getElementsByClassName('buy-ticket')
+    //buyBtn.addEventListener("click", ()=> console.log("clicked"))
   })
+  
 }
