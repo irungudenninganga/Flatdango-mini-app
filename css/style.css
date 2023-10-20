@@ -1,7 +1,7 @@
 /* @import url("./css/bootstrap.css"); */
-body{
+#container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 h1{
     text-align: center;
@@ -10,4 +10,11 @@ h1{
 .movie-name{
     list-style: none;
     margin-left: 20px;
+}
+.movie-name:hover{
+    cursor: pointer;
+    background-color: aqua;
+    color: black;
+    border-radius: 4px;
+    padding: 5px 5px;
 }

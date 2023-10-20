@@ -40,7 +40,7 @@ btn.addEventListener('click', ()=> {
   filmsArr.forEach( title => {
     dropDown.innerHTML+=`
       
-          <li class="movie-name">${title.title}</li> <br> <br>
+    <span><li class="movie-name">${title.title}</li> </span><br> <br>
     `
   })
 })
