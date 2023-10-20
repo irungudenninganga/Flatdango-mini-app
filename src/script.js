@@ -11,38 +11,36 @@ function getElements(){
         .then(res => res.json())
         .then(data => {
             filmsArr=[...data]
-            //console.log(filmsArr)
+            
             displayDropDown(filmsArr)
         
         
         })
-        //console.log(filmsArr)
+        
         
 }
-
+// displayDropDown() is used to display the movies available 
 function displayDropDown(filmsArr){
     console.log(filmsArr)
     const dropDown=document.getElementById('drop-down-movies')
+    //the innerHtml part is from the bootsrap an apply the styling 
     dropDown.innerHTML+=`
     <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Available Movies
-  </button> <br> 
-  <ul class="dropdown-menu dropdown-menu-dark">
-    <li id="li" class="dropdown-item active" >Top Play</li>
-    <li class="dropdown-item" >Another action</li>
-    
-  </ul>
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Available Movies
+      </button> <br> 
+      <ul class="dropdown-menu dropdown-menu-dark">
+        <li id="li" class="dropdown-item active" >Top Play</li>
+        <li class="dropdown-item" >Another action</li>
+      </ul>
 </div>  <br>
     `
+// this event listner is used to display each movie when a click is made it display's all movies    
 const btn=document.querySelector('#li')
 btn.addEventListener('click', ()=> {
-  filmsArr.forEach( title => {
-    dropDown.innerHTML+=`
-      
-    <span><li class="movie-name">${title.title}</li> </span><br> <br>
-    `
-  })
+  filmsArr.forEach( title => dropDown.innerHTML+=` <span><li class="movie-name">${title.title}</li> </span><br> <br> `
+
+  )
 })
   
 }   
