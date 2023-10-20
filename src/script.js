@@ -13,6 +13,7 @@ function getElements(){
             filmsArr=[...data]
             
             displayDropDown(filmsArr)
+            displayCards(filmsArr)
         
         
         })
@@ -43,4 +44,23 @@ btn.addEventListener('click', ()=> {
   )
 })
   
-}   
+}  
+// this displayCards() is used to display each movie 
+function displayCards(filmsArr){
+  // console.log(filmsArr)
+  // the grab hold of the location to store the new elements 
+  let cards=document.getElementById('cards')
+  // a loop over the array and create each card with this details below
+  filmsArr.forEach( card => {
+    cards.innerHTML+= `
+    <div class="card" style="width: 18rem;">
+    <img src="${card.poster}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+    `
+  })
+}
