@@ -77,7 +77,9 @@ filmsArr.forEach(card => {
 // button's click event listener to that specific card.
   buyBtn.addEventListener("click", () => {
     // Modify the card's content when the button is clicked
-  // if (availableTickets>0){
+    // the if statment is used to check the value of available seats if it is zero one cannot purchase a seat 
+   if (availableTickets>0){
+    // making a PATCH request to update the db on a click to update the number of seats decreases
     fetch(`http://localhost:3000/films/${card.id}`, {
       method: "PATCH",
       headers:{
@@ -89,11 +91,11 @@ filmsArr.forEach(card => {
       })
     })
     
+    // if the available seats is zero the button innertext changes to 'Sold  Out'
+   } else if(availableTickets === 0) {
+    buyBtn.textContent= "Sold Out"
     
-   //} else if(availableTickets===0) {
-    //buyBtn.textContent= "Sold out"
-    
-   //}
+   }
     
 
   });
