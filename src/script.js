@@ -2,11 +2,11 @@
 let filmsArr=[]
 // to make the web not interactive  an event listner is added "Domcontentloaded"
 document.addEventListener('DOMContentLoaded',()=>{
-    getElements()
+    getElements(filmsArr)
 })
 
 // this is a get request made to the db
-function getElements(){
+function getElements(filmsArr){
     fetch('http://localhost:3000/films')
         .then(res => res.json())
         .then(data => {
@@ -38,6 +38,7 @@ function displayDropDown(filmsArr){
     `
 // this event listner is used to display each movie when a click is made it display's all movies    
 const btn=document.querySelector('#li')
+
 btn.addEventListener('click', ()=> {
   filmsArr.forEach( title => dropDown.innerHTML+=` <span><li class="movie-name">${title.title}</li> </span><br> <br> `
 
@@ -47,43 +48,42 @@ btn.addEventListener('click', ()=> {
 }  
 // this displayCards() is used to display each movie 
 function displayCards(filmsArr){
-  // console.log(filmsArr)
-  // the grab hold of the location to store the new elements 
-  let cards=document.getElementById('cards')
-  // a loop over the array and create each card with this details below
-  filmsArr.forEach( card => {
-    cards.innerHTML+= `
+
+
+  const cards = document.getElementById('cards');
+
+filmsArr.forEach(card => {
+  //In this code, we create a new card element for each movie and attach the "Buy Ticket"
+  const cardElement = document.createElement('div');
+  
+  cardElement.innerHTML = `
     <div class="card" style="width: 18rem;">
-    <img src="${card.poster}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">${card.title}</h5>
-      <p class="card-text">${card.description}</p>
-      <p class="card-text">Run Time : ${card.runtime}</p>
-      <p class="card-text">Show Time : ${card.showtime}</p>
-      <p class="card-text">Capacity : ${card.capacity}</p>
-      <p  class="card-text">Available Tickets :${card.capacity-card.tickets_sold}</p>
-      
+      <img src="${card.poster}" class="card-img-top" alt="movie's image">
+      <div class="card-body">
+        <h5 class="card-title">${card.title}</h5>
+        <p class="card-text">${card.description}</p>
+        <p class="card-text">Run Time: ${card.runtime}</p>
+        <p class="card-text">Show Time: ${card.showtime}</p>
+        <p class="card-text">Capacity: ${card.capacity}</p>
+        <p class="card-text">Available Tickets: ${card.capacity - card.tickets_sold}</p>
+      </div>
+      <button class="buy" class="card-text">Buy Ticket</button>
     </div>
-    <button id="buy" class="card-text">Buy Ticket</button>
-  </div>
+  `;
   
-    `
-
-    button()
-  })
-
-  
-}
-function button(){
-      document.querySelector('#buy').addEventListener("click", ()=> {
-      //alert('hi there!')
-      //fetch('http://localhost:3000/films')
-      (card.capacity-card.tickets_sold)-1
-      cards.innerHTML+=`
-      <p  class="card-text">Available Tickets :${(card.capacity-card.tickets_sold)-1}</p>
-      `
-      console.log('clicked')
-  
-    })
+  const buyBtn = cardElement.querySelector('.buy');
+// button's click event listener to that specific card.
+  buyBtn.addEventListener("click", () => {
+    // Modify the card's content when the button is clicked
+    //cardElement.querySelector(".card-text:last-child").textContent = `Available Tickets: ${(card.capacity - card.tickets_sold )- 1}`;
     
-}
+    console.log('clicked');
+
+  });
+//the card is appended to the DOM
+  cards.appendChild(cardElement);
+});
+
+
+};
+
