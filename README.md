@@ -27,11 +27,11 @@ As described above about flatdango now we are looking how the project looks in g
 
   ![Top Play](./images/topplay.png)
 
-  After pressing a dropdown list will appear of all the available movies 
+>  After pressing a dropdown list will appear of all the available movies 
 
   ![Available movies](./images/dropdown.png)
 
-  To book a spot for your movie click the button 'buy ticket'
+>  To book a spot for your movie click the button 'buy ticket'
 
   ![Alt text](./images/buyTicket.png)
 
@@ -83,7 +83,7 @@ MIT License
 
 Copyright (c) 2023 irungudennisnganga
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
+>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
