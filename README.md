@@ -36,4 +36,67 @@ As described above about flatdango now we are looking how the project looks in g
   ![Alt text](./images/buyTicket.png)
 
   This is a more developed website to make the users work easy as they use the website
-  
+
+
+## Run locally
+first start by making a copy of the project on your GitHub account and clone it to the local computer to be able to access the project
+
+Go to the project directory
+
+```bash
+  cd Flatdango-mini-app
+```
+
+open folder in text editor 
+
+```bash
+  code .
+```
+
+on the terninal
+
+````bash
+json-server --watch db.json 
+
+````
+
+Follow the instruction above to use and run the project localy.  
+
+
+## Lessons Learned
+
+* Through this project i have learned how to :
+  * communicating with the server.
+  * listenig to events on the DOM.
+  * manipulating the DOM.
+
+  ## 🚀 About Me
+ * I'm a full stack developer
+ * find me [here](https://github.com/irungudenninganga)
+
+ ## Author
+
+  * [irungudennis](https://github.com/irungudenninganga)
+
+## License 
+MIT License
+
+Copyright (c) 2023 irungudennisnganga
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.  
