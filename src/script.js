@@ -51,7 +51,7 @@ function displayCards(filmsArr){
   // the grab hold of the location to store the new elements 
   let cards=document.getElementById('cards')
   // a loop over the array and create each card with this details below
-  filmsArr.map( card => {
+  filmsArr.forEach( card => {
     cards.innerHTML+= `
     <div class="card" style="width: 18rem;">
     <img src="${card.poster}" class="card-img-top" alt="...">
@@ -66,8 +66,16 @@ function displayCards(filmsArr){
     </div>
     <button id="buy" class="card-text">Buy Ticket</button>
   </div>
+  
     `
-    document.querySelector('#buy').addEventListener("click", ()=> {
+
+    button()
+  })
+
+  
+}
+function button(){
+      document.querySelector('#buy').addEventListener("click", ()=> {
       //alert('hi there!')
       //fetch('http://localhost:3000/films')
       (card.capacity-card.tickets_sold)-1
@@ -78,8 +86,4 @@ function displayCards(filmsArr){
   
     })
     
-    
-  })
-
-  
 }
