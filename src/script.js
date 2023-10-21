@@ -70,13 +70,25 @@ filmsArr.forEach(card => {
       <button class="buy" class="card-text">Buy Ticket</button>
     </div>
   `;
-  
+  card.tickets_sold < 0 ? console.log("na"): true;
+
   const buyBtn = cardElement.querySelector('.buy');
 // button's click event listener to that specific card.
   buyBtn.addEventListener("click", () => {
     // Modify the card's content when the button is clicked
-    //cardElement.querySelector(".card-text:last-child").textContent = `Available Tickets: ${(card.capacity - card.tickets_sold )- 1}`;
-    
+   
+    fetch(`http://localhost:3000/films/${card.id}`, {
+      method: "PATCH",
+      headers:{
+        "content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body:JSON.stringify({
+        tickets_sold:card.tickets_sold+1
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
     console.log('clicked');
 
   });
