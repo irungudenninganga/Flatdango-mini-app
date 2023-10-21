@@ -24,6 +24,7 @@ h1{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
+    height:900px;
 }
 
 .movie-name{
@@ -45,6 +46,6 @@ h1{
     padding: 5px;
     margin-bottom: 3px;
 }
-.buy-ticket:hover{
-    background-color: rgba(red, green, 0.5);
+.buy:hover{
+    background-color: rgba(127, 228, 114,0.3);
 }

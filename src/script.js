@@ -55,6 +55,7 @@ function displayCards(filmsArr){
 filmsArr.forEach(card => {
   //In this code, we create a new card element for each movie and attach the "Buy Ticket"
   const cardElement = document.createElement('div');
+  const availableTickets = card.capacity - card.tickets_sold;
   
   cardElement.innerHTML = `
     <div class="card" style="width: 18rem;">
@@ -70,13 +71,13 @@ filmsArr.forEach(card => {
       <button class="buy" class="card-text">Buy Ticket</button>
     </div>
   `;
-  card.tickets_sold < 0 ? console.log("na"): true;
+  
 
   const buyBtn = cardElement.querySelector('.buy');
 // button's click event listener to that specific card.
   buyBtn.addEventListener("click", () => {
     // Modify the card's content when the button is clicked
-   
+  // if (availableTickets>0){
     fetch(`http://localhost:3000/films/${card.id}`, {
       method: "PATCH",
       headers:{
@@ -87,9 +88,13 @@ filmsArr.forEach(card => {
         tickets_sold:card.tickets_sold+1
       })
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
-    console.log('clicked');
+    
+    
+   //} else if(availableTickets===0) {
+    //buyBtn.textContent= "Sold out"
+    
+   //}
+    
 
   });
 //the card is appended to the DOM
