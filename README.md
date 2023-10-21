@@ -16,3 +16,24 @@ details including the time and the number of available seats
 * [How to handle event listners](https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers)
 * [Json server](https://www.npmjs.com/package/json-server)
 
+### How the project works
+As described above about flatdango now we are looking how the project looks in general and how it works.
+> Flatdango is a web application to book space for watching a movie in a theatre, there are several movies available 
+  and will be displayed above with each movie and is ditails below and a booking spot.
+
+   ![Flatdango app](./images/flatdango.png)
+
+> To see a list of all available movies click the drop down on the left and press *Top Play*
+
+  ![Top Play](./images/topplay.png)
+
+  After pressing a dropdown list will appear of all the available movies 
+
+  ![Available movies](./images/dropdown.png)
+
+  To book a spot for your movie click the button 'buy ticket'
+
+  ![Alt text](./images/buyTicket.png)
+
+  This is a more developed website to make the users work easy as they use the website
+  
