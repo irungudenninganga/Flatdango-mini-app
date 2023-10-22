@@ -24,26 +24,27 @@ function getElements(filmsArr){
 function displayDropDown(filmsArr){
     console.log(filmsArr)
     const dropDown=document.getElementById('drop-down-movies')
+    let dropDownDiv=document.createElement('div')
     //the innerHtml part is from the bootsrap an apply the styling 
-    dropDown.innerHTML+=`
+    dropDownDiv.innerHTML+=`
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Available Movies
       </button> <br> 
       <ul class="dropdown-menu dropdown-menu-dark">
         <li id="li" class="dropdown-item active" >Top Play</li>
-        <li class="dropdown-item" >Premium Movies</li>
+        
       </ul>
 </div>  <br>
     `
+    dropDown.appendChild(dropDownDiv)
 // this event listner is used to display each movie when a click is made it display's all movies    
 const btn=document.querySelector('#li')
 
 btn.addEventListener('click', ()=> {
-  filmsArr.forEach( title => dropDown.innerHTML+=` <span><li class="movie-name">${title.title}</li> </span><br> <br> `
-
-  )
+  filmsArr.forEach( title => dropDown.innerHTML+=`<span><li class="movie-name">${title.title}</li> </span> <br> <br>`)
 })
+
   
 }  
 // this displayCards() is used to display each movie 
@@ -66,7 +67,7 @@ filmsArr.forEach(card => {
         <p class="card-text">Run Time: ${card.runtime}</p>
         <p class="card-text">Show Time: ${card.showtime}</p>
         <p class="card-text">Capacity: ${card.capacity}</p>
-        <p class="card-text">Available Tickets: ${card.capacity - card.tickets_sold}</p>
+        <p class="card-text">Available Tickets: ${availableTickets}</p>
       </div>
       <button class="buy" class="card-text">Buy Ticket</button>
     </div>
@@ -78,7 +79,7 @@ filmsArr.forEach(card => {
   buyBtn.addEventListener("click", () => {
     // Modify the card's content when the button is clicked
     // the if statment is used to check the value of available seats if it is zero one cannot purchase a seat 
-   if (availableTickets>0){
+   if (availableTickets > 0){
     // making a PATCH request to update the db on a click to update the number of seats decreases
     fetch(`http://localhost:3000/films/${card.id}`, {
       method: "PATCH",

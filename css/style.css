@@ -25,6 +25,7 @@ h1{
     text-align: center;
     padding: 20px;
     height:900px;
+    margin-left: 70px;
 }
 
 .movie-name{
@@ -48,4 +49,11 @@ h1{
 }
 .buy:hover{
     background-color: rgba(127, 228, 114,0.3);
+    color: rgb(230, 103, 124);
+}
+#del{
+    border: none;
+    border-radius: 3px;
+    padding: 4px;
+    background-color: rgb(231, 74, 74);
 }
